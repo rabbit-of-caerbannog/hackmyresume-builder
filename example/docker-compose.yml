@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  resume:
+    build: ..
+    volumes:
+      - ./data:/data:ro
+      - ./out:/out
+    # environment:
+    #   - THEME_LIST=jsonresume-theme-moon,jsonresume-theme-rocketspacer,jsonresume-theme-even

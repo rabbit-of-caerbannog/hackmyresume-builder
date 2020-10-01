@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Build a single theme
+if [ -n "$THEME_LIST" ]; then
+  IFS=','
+else
+  THEME_LIST=$(find /node_modules -maxdepth 1 | grep "\-theme\-" | cut -d'/' -f 3)
+  IFS=$'\n'
+fi
+
+
+DATA_DIRECTORY="/example"
+if [ -d /data ]; then
+  DATA_DIRECTORY="/data"
+fi
+
+for theme in $THEME_LIST; do
+  # Build $theme
+  mkdir -p "/out/$theme"
+  rsync -a "$DATA_DIRECTORY/" "/out/$theme" --exclude=*.json
+  timeout 20 \
+    hackmyresume BUILD -t "/node_modules/$theme" \
+      "$DATA_DIRECTORY"/*.json TO "/out/$theme/index.all"
+done
+
+echo "All done"
