@@ -1,0 +1,25 @@
+name: Monthly Github Pages Update
+
+on: push
+# on:
+#   schedule:
+#     - cron: '20 5 1 * *' # 1 hour after the beginning of the Monthly Docker Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: docker run -v "$PWD/example/out:/out" rabbitofcaerbannog/hackmyresume-builder
+    - run: sudo chown -R $USER:$USER example/out
+
+    - run: sudo npm install -g indexifier
+    - run: indexifier --exclude .git --extensions .html,.pdf,.json,.yml,.png --html example/out > example/out/index.html
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./example/out

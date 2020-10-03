@@ -26,7 +26,7 @@ This will get you up and started. Just tweak the data inside `example/data` to y
 If you just want to take a quick run at it and see the results, you can run the following command:
 
 ```
-docker run --rm -v "$PWD/out":/out -it rabbitofcaerbannog/hackmyresume-builder
+docker run --rm -v "$PWD/out":/out rabbitofcaerbannog/hackmyresume-builder
 ```
 
 The `out` volume is always required to keep the docker generated files. They'll also be owned by root, so you probably also want to always run `sudo chown -R "$USER:$USER" out` afterwards.
@@ -35,12 +35,12 @@ The `out` volume is always required to keep the docker generated files. They'll 
 Once you have your `resume.json` (and whatever pictures/assets you need), you put them up in a folder and mount them as well. We can mount it as read-only to make sure it doesn't mess with our stuff.
 
 ```
-docker run --rm -v "$PWD/out:/out" -v "$PWD/data:/data:ro" -it rabbitofcaerbannog/hackmyresume-builder
+docker run --rm -v "$PWD/out:/out" -v "$PWD/data:/data:ro" rabbitofcaerbannog/hackmyresume-builder
 ```
 
 Finally, if you've chosen one or more themes that you want to build, you can pass the `THEME_LIST` environment variable.
 ```
-docker run --rm -v "$PWD/out:/out" -v "$PWD/data:/data:ro" --env THEME_LIST=jsonresume-theme-rocketspacer,jsonresume-theme-even -it rabbitofcaerbannog/hackmyresume-builder
+docker run --rm -v "$PWD/out:/out" -v "$PWD/data:/data:ro" --env THEME_LIST=jsonresume-theme-rocketspacer,jsonresume-theme-even rabbitofcaerbannog/hackmyresume-builder
 ```
 
 ## Credit Due
