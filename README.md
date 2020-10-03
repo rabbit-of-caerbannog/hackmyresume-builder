@@ -18,7 +18,7 @@ cd hackmyresume-builder/example
 make
 ```
 
-This will get you up and started. Just tweak the data inside `example/data` to your liking and keep `make`ing until you like what you see. If you don't want to build all the themes, just uncomment the environment lines in docker-compose and edit to your preference.
+This will get you up and started. Just tweak the data inside `example/data` to your liking and keep `make`ing until you like what you see. Includes a `docker-compose` for those who prefer it.
 
 
 # Usage
