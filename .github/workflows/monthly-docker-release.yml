@@ -1,4 +1,4 @@
-name: Monthly Scheduled Release
+name: Monthly Docker Release
 
 on:
   schedule:
