@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>John Doe</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style>html, body, main, section, header, ul, p, h1, h2, h3 {
+  font-family: Calibri, 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0; padding: 0;
+  display: block;
+}
+
+a {
+  color: #0064BD;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7B0796;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size:
+}
+
+h2 {
+  text-transform: uppercase;
+  color: #898989;
+  font-size: 2em;
+  position: relative;
+  font-weight: 400;
+}
+
+h3, .tenure {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  width: 85%;
+  float: left;
+}
+
+table {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+td:first-child {
+  text-align: right;
+  color: #c00000;
+  /* letter-spacing: 2px; PDF hates letter spacing */
+  font-weight: bold;
+}
+
+td:last-child {
+  text-align: justify; /* HTML justification sucks, but in this case... */
+}
+
+hr {
+  display: none;
+}
+
+main {
+  padding: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin-top: 2em;
+}
+
+section > div {
+  margin-top: 1em;
+  overflow: hidden; /* Clear floated children */
+}
+
+section > div p {
+  clear: both;
+}
+
+section > header {
+  position: relative;
+}
+
+p + ul {
+  margin: 1em;
+}
+
+ul {
+  clear: both;
+}
+
+li {
+  margin-left: 2em;
+}
+
+p, li {
+  text-align: justify;
+}
+
+.tenure {
+  float: right;
+  color: #6F6F6F;
+  background-color: #F5F5F5;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 85%;
+}
+
+span.keywords {
+  font-size: 12px;
+  color: #B16666;
+}
+
+thead {
+  display: none;
+}
+
+main > header {
+  width: 100%;
+  float: left;
+  margin-bottom: 1em;
+}
+
+h1 {
+  float: left;
+}
+
+h1, h2, .label {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif;
+}
+
+#contact {
+ clear: both;
+ float: right;
+ margin-top: 2px;
+}
+
+#contact span + span {
+  margin-left: 10px;
+}
+
+header > span.fa {
+  text-align: center;
+  margin-right: 3px;
+  position: absolute;
+  width: 40px;
+  top: 10px;
+  font-size: 30px;
+  /*transform: translateX(-110%); PDF no likey */
+  margin-left: -50px;
+  color: #DADADA;
+}
+
+.label {
+  float: right;
+  color: #DADADA;
+}
+
+#summary {
+  color: #717171;
+  font-size: 1.25em;
+  margin-top: 6em;
+}
+
+#skills td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+</style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>John <span style="color: #C00000;">Doe</span></h1>
+        <span class="label">Programmer</span>
+        <p id="contact">
+          <span class="email"><a href="mailto:john@gmail.com">john@gmail.com</a></span>
+          <span class="phone">(912) 555-4321</span>
+          <span class="website"><a href="http://johndoe.com"><a href="http://johndoe.com">http://johndoe.com</a></a></span>
+        </p>
+      </header>
+
+
+      <section id="summary">
+        A summary of John Doe...
+      </section>
+
+
+
+      
+      <hr>
+      <section id="skills">
+          <header>
+            <span class="fa fa-lg fa-code"></span>  <h2>skills</h2>
+          </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Keywords</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 25%;">Web Development</td>
+              <td class="keywords">HTML CSS Javascript </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      
+      <hr>
+      <section id="employment">
+          <header>
+            <span class="fa fa-lg fa-building"></span>  <h2>employment</h2>
+          </header>
+      
+          <div>
+            <h3><em>President</em>,
+              <a href="http://company.com">Company</a>
+              </h3>
+              <span class="location"></span> 
+              <span class="tenure">2013-01 — 2014-01</span>
+            <p><p>Description...</p>
+      </p>
+            <ul>
+              <li>Started the company</li>
+            </ul>
+                  
+          </div>
+      </section>
+
+      
+
+      
+      <hr>
+      <section id="education">
+          <header>
+            <span class="fa fa-lg fa-mortar-board"></span>  <h2>education</h2>
+          </header>
+          <div>
+            <h3>University</h3>
+            <span class="tenure">2011-01 — 2013-01</span>
+            
+            <span class="keywords">DB1101 - Basic SQL </span>
+          </div>
+      </section>
+
+      
+
+      
+      <hr>
+      <section id="service">
+          <header>
+            <span class="fa fa-lg fa-child"></span>  <h2>service</h2>
+          </header>
+          <div>
+          <h3><em>Volunteer</em>,
+            <a href="http://organization.com/">Organization</a>
+          </h3>
+          <span class="tenure">2012-01 — 2013-01</span>
+          <p><p>Description...</p>
+      </p>
+          <ul>
+            <li>Awarded &#39;Volunteer of the Month&#39;</li>
+          </ul>
+          </div>
+      </section>
+
+      
+
+      
+      <hr>
+      <section id="writing">
+          <header>
+            <span class="fa fa-lg fa-pencil"></span>  <h2>writing</h2>
+          </header>
+          <div>
+          <h3><em><a href="http://publication.com">Publication</a></em>,
+      
+            Company</h3>
+            <span class="tenure">2014</span>
+            <p>Description...</p>
+      
+          </div>
+      </section>
+
+      
+
+      
+      <hr>
+      <section id="recognition">
+          <header>
+            <span class="fa fa-lg fa-trophy"></span>  <h2>recognition</h2>
+          </header>
+          <div>
+          <h3><em>Award</em>, Company</h3>
+          <span class="tenure">2014</span>
+          <p>There is no spoon.</p>
+      
+          </div>
+      </section>
+
+      
+
+      
+      <hr>
+      <section id="testimonials">
+          <header>
+            <span class="fa fa-lg fa-quote-left"></span>  <h2>testimonials</h2>
+          </header>
+          <div>
+          <h3><em>Jane Doe</em></h3>
+          <p>Reference...</p>
+          </div>
+      </section>
+
+      
+
+    </div>
+  </main>
+</html>

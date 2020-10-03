@@ -1,0 +1,46 @@
+John Doe
+Email: john@gmail.com
+Tel: (912) 555-4321
+Web: http://johndoe.com
+
+***
+
+A summary of John Doe...
+
+
+SKILLS
+
+  - Web Development: HTML, CSS, Javascript, 
+  Master
+
+
+
+EMPLOYMENT
+
+Company 2013-01 — 2014-01
+Description...
+
+  - Started the company
+
+
+EDUCATION
+
+University 2011-01 — 2013-01
+
+
+
+
+
+VOLUNTEER
+
+Organization (2012-01 — 2013-01)
+Description...
+
+  - Awarded 'Volunteer of the Month'
+
+
+EMPLOYMENT
+
+Publication (2014-10)
+Description...
+

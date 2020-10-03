@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+
+		<title>John Doe's Resume</title>
+
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<style>
+		@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+body {
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	padding: 15px;
+}
+
+#resume {
+	margin: 0 auto;
+	width: 768px;
+	padding: 2rem 3rem;
+}
+
+#header {
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+#header h1,
+.avatar {
+	display: inline-block;
+}
+
+.avatar img {
+	width: 74px;
+	height: auto;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, p {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.0rem;
+	text-transform: uppercase;
+	font-family: 'Press Start 2P', sans-serif;
+}
+
+h2 {
+	font-size: 1.5rem;
+	border-bottom: 1px dashed #dedede !important;
+	padding-bottom: 4px;
+	margin-bottom: .75rem;
+	font-family: 'Permanent Marker', sans-serif;
+}
+
+h3 {
+	font-size: 1.25rem;
+	font-family: 'Permanent Marker', sans-serif;
+}
+h4 {
+	font-size: 1.0rem;
+}
+
+a {
+	color: #3984B8;
+}
+
+code {
+	color: white;
+	padding: 3px 5px;
+	font-weight: bold;
+	background-image: linear-gradient(45deg, #333 0%, #777 100%);
+}
+
+section {
+	margin: .65rem 0;
+}
+
+#header .avatar img {
+	border-radius: 100%;
+	max-width: 100px;
+	margin-right: 1rem;
+	margin-top: .85rem;
+}
+
+blockquote {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+ul {
+	margin-bottom: 0;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	/* display: inline-block; */
+	margin: 0 0 4px;
+}
+
+.city,
+.countryCode,
+.region,
+.email,
+.phone,
+.website,
+.profile-item {
+	display: inline-block;
+}
+
+.contact,
+.location {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: .4rem;
+}
+
+#profiles {
+	display: flex;
+}
+
+#skills ul {
+	margin-bottom: 0.5rem;
+}
+
+#skills li {
+	/* background-image: linear-gradient(45deg, #3984B8 0%, #7DD6F6 100%); */
+	display: inline-block;
+	color: white;
+	font-size: 0.74rem;
+}
+
+#skills .item {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+}
+
+#skills .item:nth-of-type(1),
+#skills .item:nth-of-type(3),
+#skills .item:nth-of-type(5) {
+	width: 48%;
+}
+
+#skills .item:nth-of-type(2),
+#skills .item:nth-of-type(4),
+#skills .item:nth-of-type(6) {
+	text-align: right;
+	width: 48%;
+}
+
+#skills .item:nth-of-type(5),
+#skills .item:nth-of-type(6) {
+	margin-bottom: .8rem;
+}
+
+#work .item {
+	margin: .5rem 0;
+}
+
+#work .item ul {
+	margin: 0.5rem 0 0 1.5rem;
+}
+
+#work .item:nth-of-type(2) ul,
+#work .item:nth-of-type(3) ul {
+	padding-left: 0;
+}
+
+#work .item:nth-of-type(2) li,
+#work .item:nth-of-type(3) li {
+	display: inline-block;
+	width: 22%;
+}
+
+/* #work .date {
+	float: right;
+} */
+
+.date {
+	font-size: 14px;
+	color: #444;
+	/* margin-bottom: .5rem; */
+}
+
+#profiles .item,
+.email,
+.phone {
+	padding-right: 2rem;
+}
+
+#education .item,
+#awards .item {
+	display: inline-block;
+	width: 49%;
+	margin-bottom: 0.5rem;
+}
+
+/* Brand Colors */
+
+/* .HTML5 {
+	border-color:#e44d26 !important;
+}
+.CSS3 {
+	border-color:#2965f1  !important;
+}
+.JavaScript {
+	border-color:#F0DB4F !important;
+}
+.ES6 {
+	border-color:#323330 !important;
+}
+.Vue {
+	border-color:#41B883 !important;
+}
+.React {
+	border-color:#61dbfb  !important;
+}
+.Bootstrap {
+	border-color:#553c7b !important;
+}
+.jQuery {
+	border-color:#0769ad !important;
+}
+.Gatsby {
+	border-color:#663399 !important;
+}
+.Jekyll {
+	border-color:#2b2b2b !important;
+}
+.nginx {
+	border-color:#1c6333 !important;
+}
+.Apache {
+	border-color:#282661 !important;
+}
+.NodeJS {
+	border-color:#43853d !important;
+}
+.PHP7 {
+	border-color:#4F5B93 !important;
+}
+.SQL {
+	border-color:#0074a3 !important;
+}
+.NoSQL {
+	border-color:#13aa52 !important;
+}
+.Laravel {
+	border-color:#ff2d20 !important;
+}
+.WordPress {
+	border-color:#0073aa !important;
+}
+.Express {
+	border-color:#eee !important;
+}
+.Shopify {
+	border-color:#004c3f !important;
+}
+.Magento {
+	border-color:#f26322 !important;
+}
+.macOS {
+	border-color:#a3aaae !important;
+}
+.Debian {
+	border-color:#CE0056 !important;
+}
+.Arch {
+	border-color:#07b !important;
+}
+.Windows {
+	border-color:#0067b8 !important;
+}
+.CentOS {
+	border-color:#262577 !important;
+}
+.Ubuntu {
+	border-color:#e95420 !important;
+}
+.Raspbian {
+	border-color:#c61931 !important;
+} */
+
+		</style>
+
+	</head>
+	<body>
+
+	<div id="resume">
+		
+			<section id="header">
+				<div class="avatar">
+					<img srcset="picture.png">
+				</div>
+				<div class="meta">
+					<h1>John Doe</h1>
+					<p>This resume was built using <code>samk</code> theme for <code>JSON Resume</code> on <span id="today"></span></p>
+				</div>
+			</section>
+		
+			<section id="basics">
+		
+				<h2>👨‍💻 Programmer</h2>
+		
+				<div class="contact">
+				<div class="location">
+					<p>
+						<i class="fa fa-map-pin"></i>
+						<strong>Location:</strong><br />
+						San Francisco,
+						California,
+						US
+					</p>
+				</div>
+				<div class="website">
+					<a target="_blank" href="http://johndoe.com">http://johndoe.com</a>
+				</div>
+				<div class="email">
+					<strong class="network">
+						E-Mail:
+					</strong>
+					<br/>
+					<a href="mailto:john@gmail.com">john@gmail.com</a>
+				</div>
+				<div class="phone">
+					<strong class="network">
+						Phone:
+					</strong>
+					<br />
+					<a href="tel:(912) 555-4321">(912) 555-4321</a>
+				</div>
+					<div class="profile-item">
+						<strong class="network">
+							Twitter
+						</strong>
+						<div class="username">
+							<a target="_blank" href="http://twitter.com/john">
+								john
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="summary">
+					<p><i class="fa fa-info-circle"></i> <strong>About Me</strong></p>
+					<p>A summary of John Doe...</p>
+				</div>
+			</section>
+		
+		<script>
+		var today = new Date();
+		var dd = String(today.getDate()).padStart(2, '0');
+		var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var yyyy = today.getFullYear();
+		
+		today = yyyy + '-' + mm + '-' + dd;
+		var todaysDate = document.getElementById("today");
+			todaysDate.innerHTML = today;
+		</script>		<section id="skills">
+			<h2>💪 Skills</h2>
+			<div class="item">
+				<p><strong>
+					Web Development
+				</strong></p>
+				<div class="level">
+					<em>Master</em>
+				</div>
+				<ul class="keywords">
+					<li><code>HTML</code></li>
+					<li><code>CSS</code></li>
+					<li><code>Javascript</code></li>
+				</ul>
+			</div>
+		</section>
+		<section id="work">
+			<h2>💼 Experience</h2>
+			<div class="item">
+				<h4 class="name">
+					Company
+				</h4>
+				<div class="position">
+					<i class="fa fa-id-card"></i> <strong>President</strong>
+				</div>
+				<div class="date">
+					<i class="fa fa-calendar"></i>
+					<span class="startDate">
+						2013-01-01
+					</span>
+					<span class="endDate">
+						- 2014-01-01
+					</span>
+				</div>
+				<div class="website">
+					<i class="fa fa-desktop"></i> http://company.com
+				</div>
+				<div class="summary">
+					<p>Description...</p>
+				</div>
+				<ul class="highlights">
+					<li>Started the company</li>
+				</ul>
+			</div>
+		</section>
+		<section id="volunteer">
+			<h2>Volunteer</h2>
+			<div class="item">
+				<h3 class="company">
+					Organization
+				</h3>
+				<div class="date">
+					<span class="startDate">
+						2012-01-01
+					</span>
+					<span class="endDate">
+						- 2013-01-01
+					</span>
+				</div>
+				<div class="position">
+					Volunteer
+				</div>
+				<div class="website">
+					<a href="http://organization.com/">http://organization.com/</a>
+				</div>
+				<div class="summary">
+					<p>Description...</p>
+				</div>
+				<ul class="highlights">
+					<li>Awarded &#x27;Volunteer of the Month&#x27;</li>
+				</ul>
+			</div>
+		</section>
+		<section id="education">
+			<h2>🎒 Education</h2>
+			<div class="item">
+				<div class="date">
+					<i class="fa fa-calendar"></i>
+					<span class="startDate">
+						2011-01-01
+					</span>
+					<span class="endDate">
+						- 2013-01-01
+					</span>
+				</div>
+				<div class="institution">
+					<strong>University</strong>
+				</div>
+				<div class="studyType">
+					Bachelor
+				</div>
+				<div class="area">
+					Software Development
+				</div>
+				<div class="gpa">
+					GPA: 4.0
+				</div>
+				<ul class="courses">
+					<li>DB1101 - Basic SQL</li>
+				</ul>
+			</div>
+		</section>
+		<section id="awards">
+			<h2>🏆 Achievements</h2>
+			<div class="item">
+				<div class="date">
+					<i class="fa fa-calendar"></i> 2014-11-01
+				</div>
+				<div class="title">
+					<i class="fa fa-trophy"></i> <strong>Award</strong>
+				</div>
+				<div class="summary">
+					There is no spoon.
+				</div>
+				<div class="awarder">
+					Company
+				</div>
+			</div>
+		</section>
+		<section id="publications">
+			<h2>Publications</h2>
+			<div class="item">
+				<div class="name">
+					Publication
+				</div>
+				<div class="publisher">
+					Company
+				</div>
+				<div class="releaseDate">
+					2014-10-01
+				</div>
+				<div class="website">
+					<a href="http://publication.com">Link</a>
+				</div>
+				<div class="summary">
+					<p>Description...</p>
+				</div>
+			</div>
+		</section>
+		<section id="languages">
+			<h2>Languages</h2>
+			<div class="item">
+				<div class="language">
+					English
+				</div>
+				<div class="fluency">
+					<em>Native speaker</em>
+				</div>
+			</div>
+		</section>
+		<section id="interests">
+			<h2>Interests</h2>
+			<div class="item">
+				<div class="name">
+					Wildlife
+				</div>
+				<ul class="keywords">
+					<li>Ferrets</li>
+					<li>Unicorns</li>
+				</ul>
+			</div>
+		</section>
+		<section id="references">
+			<h2>📝 References</h2>
+			<p>References are available upon request.</p>
+			<div class="item">
+				<blockquote class="reference">
+					Reference...
+				</blockquote>
+				<div class="name">
+					— Jane Doe
+				</div>
+			</div>
+		</section>	</div>
+
+	<script>
+
+	// Get "basic info" elements, add FontAwesome icons
+	const contactInfo = document.querySelectorAll('.contact strong');
+	contactInfo.forEach(el => {
+		if (el.innerHTML.includes('E-Mail') ) {
+			el.innerHTML = '<i class="fa fa-envelope"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Phone')) {
+			el.innerHTML = '<i class="fa fa-phone"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Website')) {
+			el.innerHTML = '<i class="fa fa-globe"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('GitHub')) {
+			el.innerHTML = '<i class="fa fa-github"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('SoundCloud')) {
+			el.innerHTML = '<i class="fa fa-soundcloud"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Instagram')) {
+			el.innerHTML = '<i class="fa fa-instagram"></i>' + el.innerHTML;
+		}
+	});
+
+	// Get skill label elements, add FontAwesome icons
+	const skillLabel = document.querySelectorAll('#skills strong');
+	skillLabel.forEach(el => {
+		if (el.innerHTML.includes('Front-End') ) {
+			el.innerHTML = '<i class="fa fa-code"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Back-End')) {
+			el.innerHTML = '<i class="fa fa-code"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Local')) {
+			el.innerHTML = '<i class="fa fa-desktop"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Servers')) {
+			el.innerHTML = '<i class="fa fa-server"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('DevOps')) {
+			el.innerHTML = '<i class="fa fa-cubes"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('CLI Tools')) {
+			el.innerHTML = '<i class="fa fa-terminal"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Key Knowledge Areas')) {
+			el.innerHTML = '<i class="fa fa-key"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Multimedia Expertise')) {
+			el.innerHTML = '<i class="fa fa-file-movie-o"></i>' + el.innerHTML;
+		}
+		if (el.innerHTML.includes('Methodologies')) {
+			el.innerHTML = '<i class="fa fa-gears"></i>' + el.innerHTML;
+		}
+	});
+
+	// Get skill elements, add their content as the <li>'s class
+	// const skillElements = document.querySelectorAll('#skills li');
+	// skillElements.forEach(el => { el.outerHTML = '<li class="' + el.innerHTML + '">' + el.innerHTML + '</li>' });
+
+	// Get elements that might contain URLs
+	const companySites = document.querySelectorAll('#work .website');
+	const clientSites = document.querySelectorAll('#work li');
+
+	// URLify any detected URLs within
+	companySites.forEach(el => { el.innerHTML = urlify(el.innerHTML); });
+	clientSites.forEach(el => { el.innerHTML = urlify(el.innerHTML); });
+
+	// urlify - Detect URLs and wrap them in <a> tags
+	function urlify(text) {
+		var urlRegex = /(https?:\/\/[^\s]+)/g;
+		return text.replace(urlRegex, function (url) {
+			return '<a target="_blank" href="' + url + '">' + url + '</a>';
+		})
+	}
+	</script>
+
+	</body>
+</html>
