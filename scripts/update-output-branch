@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Important runtime flags
+set -o errexit          # Exit on most errors (see the manual)
+set -o errtrace         # Make sure any error trap is inherited
+set -o nounset          # Disallow expansion of unset variables
+set -o pipefail         # Use last non-zero exit code in a pipeline
+
+# Retrieve the repository base directory and store its path in REPODIR
+REPODIR=$(git rev-parse --show-toplevel)
+
+# Create a temporary directory and store its path in TMPDIR
+TMPDIR=$(mktemp -d)
+
+# Make sure it gets removed even if the script exits abnormally.
+trap "exit 1" HUP INT PIPE QUIT TERM
+trap 'rm -rf "$TMPDIR"' EXIT
+
+# Clone our repo into a temporary directory
+git clone "$REPODIR" "$TMPDIR"
+
+# Change directory into our example
+cd "$TMPDIR/example"
+
+# Generate new files
+make
+
+# Checkout into output branch and cd into the root directory
+git checkout origin/output
+cd "$TMPDIR"
+
+# Rsync output and remove leftovers
+rsync -av example/out/ .
+rm -r example
+
+# Regenerate index
+rm index.html
+npx indexifier --exclude .git --extensions .html,.pdf,.json,.yml,.png --html . > index.html
+
+# Git checkout into a new branch
+git checkout -b "update-output-$(date -I)"
+
+# Git add everything and commit
+git add -A && git commit -m "Update output"
+
+# Git push this branch into origin
+if ! git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"; then
+  echo "Branch already exists. Run 'git branch -D update-output-$(date -I)' first."
+fi
