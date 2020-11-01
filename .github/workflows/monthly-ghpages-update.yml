@@ -2,7 +2,7 @@ name: Monthly Github Pages Update
 
 on:
   schedule:
-    - cron: '20 5 1 * *' # 1 hour after the beginning of the Monthly Docker Release
+    - cron: '20 6 1 * *' # 1 hour after the beginning of the Monthly Docker Release
 
 jobs:
   build:

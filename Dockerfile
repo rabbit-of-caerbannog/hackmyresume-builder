@@ -23,6 +23,8 @@ RUN apk update && \
     killall Xvfb\
     ' > /usr/bin/wkhtmltopdf && \
     chmod +x /usr/bin/wkhtmltopdf && \
+# Update npm
+	npm install -g npm@latest && \
 # Install hackmyresume
 	npm install -g hackmyresume && \
 	for x in $(\

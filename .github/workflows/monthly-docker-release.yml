@@ -2,7 +2,7 @@ name: Monthly Docker Release
 
 on:
   schedule:
-    - cron: '20 4 1 * *' # on every first day of the month
+    - cron: '40 5 1 * *' # on every first day of the month
 
 jobs:
 
