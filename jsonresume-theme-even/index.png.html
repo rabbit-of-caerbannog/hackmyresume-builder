@@ -128,14 +128,6 @@
               font-size: var(--scale0);
             }
             
-            p:not(:first-child) {
-              margin-top: 1em;
-            }
-            
-            p:not(:last-child) {
-              margin-bottom: 1em;
-            }
-            
             blockquote {
               border-left: 0.2em solid var(--mutedColor);
               padding-left: 1em;
@@ -150,7 +142,7 @@
               content: '— ';
             }
             
-            header {
+            .masthead {
               background: var(--mutedColor);
               display: inherit;
               gap: inherit;
@@ -160,9 +152,14 @@
               row-gap: 0;
             }
             
-            header > *,
+            .masthead > *,
             section {
               grid-column: main;
+            }
+            
+            article > * + *,
+            blockquote > * + * {
+              margin-top: 0.6em;
             }
             
             .stack {
@@ -206,13 +203,13 @@
               padding: 0.2em 0.6em;
             }
             
-            @media (min-width: 48em) {
+            @media print, (min-width: 48em) {
               h3 {
                 text-align: right;
                 margin-bottom: inherit;
               }
             
-              header > *,
+              .masthead > *,
               section {
                 grid-column: content;
               }
@@ -229,7 +226,7 @@
     </head>
     
     <body>
-        <header>
+        <header class="masthead">
              <h1>John Doe</h1>
 
              <h2>Programmer</h2>
@@ -240,28 +237,28 @@
 
             <div class="grid-list">
                 <div>
-                     <h6>Email</h6>
+                     <h4>Email</h4>
  <a href="mailto:john@gmail.com">john@gmail.com</a>
 
                 </div>
                 <div>
-                     <h6>Phone</h6>
+                     <h4>Phone</h4>
 (912) 555-4321</div>
             </div>
         </section>
         <section id="about">
              <h3>About</h3>
 
-            <div>
+            <article>
                 <p>A summary of John Doe...</p>
-            </div>
+            </article>
         </section>
         <section id="profiles">
              <h3>Profiles</h3>
 
             <div class="grid-list">
                 <div>
-                     <h6>Twitter</h6>
+                     <h4>Twitter</h4>
  <a href="http://twitter.com/john">john</a>
 
                 </div>
@@ -272,17 +269,19 @@
 
             <div class="stack">
                 <article>
-                    <div class="spaced-list">
-                         <h4></h4>
+                    <header>
+                        <div class="spaced-list">
+                             <h4></h4>
  <span>
-                  <time datetime="2013-01-01">Jan 2013</time> –
-                  <time datetime="2014-01-01">Jan 2014</time>
-                </span>
+                    <time datetime="2013-01-01">Jan 2013</time> –
+                    <time datetime="2014-01-01">Jan 2014</time>
+                  </span>
 
-                    </div>
-                    <div class="spaced-list"> <strong>President</strong>
+                        </div>
+                        <div class="spaced-list"> <strong>President</strong>
 
-                    </div>
+                        </div>
+                    </header>
                     <p>Description...</p>
                      <h5>Highlights</h5>
 
@@ -297,17 +296,19 @@
 
             <div class="stack">
                 <article>
-                    <div class="spaced-list">
-                         <h4>Organization</h4>
+                    <header>
+                        <div class="spaced-list">
+                             <h4>Organization</h4>
  <span>
-                  <time datetime="2012-01-01">Jan 2012</time> –
-                  <time datetime="2013-01-01">Jan 2013</time>
-                </span>
+                    <time datetime="2012-01-01">Jan 2012</time> –
+                    <time datetime="2013-01-01">Jan 2013</time>
+                  </span>
 
-                    </div>
-                    <div class="spaced-list"> <strong>Volunteer</strong>
+                        </div>
+                        <div class="spaced-list"> <strong>Volunteer</strong>
 
-                    </div>
+                        </div>
+                    </header>
                     <p>Description...</p>
                      <h5>Highlights</h5>
 
@@ -322,17 +323,19 @@
 
             <div class="stack">
                 <article>
-                    <div class="spaced-list">
-                         <h4>University</h4>
+                    <header>
+                        <div class="spaced-list">
+                             <h4>University</h4>
  <span>
-                  <time datetime="2011-01-01">Jan 2011</time> –
-                  <time datetime="2013-01-01">Jan 2013</time>
-                </span>
+                    <time datetime="2011-01-01">Jan 2011</time> –
+                    <time datetime="2013-01-01">Jan 2013</time>
+                  </span>
 
-                    </div>
-                    <div class="spaced-list"> <strong>Software Development</strong>
+                        </div>
+                        <div class="spaced-list"> <strong>Software Development</strong>
 
-                    </div>
+                        </div>
+                    </header>
                     <p>Bachelor</p>
                      <h5>Courses</h5>
 
@@ -347,16 +350,18 @@
 
             <div class="stack">
                 <article>
-                    <div class="spaced-list">
-                         <h4>Award</h4>
+                    <header>
+                        <div class="spaced-list">
+                             <h4>Award</h4>
 
-                        <time datetime="2014-11-01">Nov 2014</time>
-                    </div>
-                    <div class="spaced-list">
-                        <div>Awarded by <strong>Company</strong>
-
+                            <time datetime="2014-11-01">Nov 2014</time>
                         </div>
-                    </div>
+                        <div class="spaced-list">
+                            <div>Awarded by <strong>Company</strong>
+
+                            </div>
+                        </div>
+                    </header>
                     <p>There is no spoon.</p>
                 </article>
             </div>
@@ -366,16 +371,18 @@
 
             <div class="stack">
                 <article>
-                    <div class="spaced-list">
-                         <h4>Publication</h4>
+                    <header>
+                        <div class="spaced-list">
+                             <h4>Publication</h4>
 
-                        <time datetime="2014-10-01">Oct 2014</time>
-                    </div>
-                    <div class="spaced-list"> <span>
-                    Published by <strong>Company</strong>
-                  </span>
+                            <time datetime="2014-10-01">Oct 2014</time>
+                        </div>
+                        <div class="spaced-list"> <span>
+                      Published by <strong>Company</strong>
+                    </span>
 
-                    </div>
+                        </div>
+                    </header>
                     <p>Description...</p>
                 </article>
             </div>
@@ -385,7 +392,7 @@
 
             <div class="grid-list">
                 <div>
-                     <h5>Web Development</h5>
+                     <h4>Web Development</h4>
 
                     <ul class="tag-list">
                         <li>HTML</li>
@@ -400,7 +407,7 @@
 
             <div class="grid-list">
                 <div>
-                     <h6>English</h6>
+                     <h4>English</h4>
 Native speaker</div>
             </div>
         </section>
@@ -409,7 +416,7 @@ Native speaker</div>
 
             <div class="grid-list">
                 <div>
-                     <h5>Wildlife</h5>
+                     <h4>Wildlife</h4>
 
                     <ul class="tag-list">
                         <li>Ferrets</li>
